@@ -9,7 +9,7 @@
 <div>
 <h3>Description</h3>
 
-<p>The purpose of this repository is to support collaborative development of OpenC2 custom actuator profiles by TC members.</p>
+<p>The purpose of this repository is to support collaborative development of OpenC2 custom actuator profiles by TC members, as per the TC's <a href="https://issues.oasis-open.org/browse/TCADMIN-3010">request</a>.</p>
 
 <p>The current (2018-06) draft language specification for OpenC2 allows for actuator profiles other than those that are OASIS specifications. It allows for "extensions" by vendors or users.  This openc2-cap GitHub repository is intended for use by those TC members who want to work collaboratively on their "custom" profiles.  'Cap' &mdash; is for 'custom actuator profile'.</p>
 

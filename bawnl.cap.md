@@ -62,6 +62,7 @@ Edited by Duncan Sparrell.
 
 8 June 2018. 
 
+
 Latest version: N/A.
 
 -------
@@ -145,6 +146,7 @@ specifications, while reserving the right to enforce its
 marks against misleading uses. 
 Please see [https://www.oasis-open.org/policies-guidelines/trademark](https://www.oasis-open.org/policies-guidelines/trademark) 
 for above guidance.
+
 
 -------
 

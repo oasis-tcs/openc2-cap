@@ -1,6 +1,9 @@
-# Bawnl Custom Actuator Profile
+# Haha Custom Actuator Profile
 
-## 8 June 2018
+## 9 July 2018
+
+This is work in progress by starting with slpf profile and
+editing. A lot of editing still to do.
 
 This Custom Actuator Profile (cap) is provided for information purposes.
 
@@ -14,19 +17,15 @@ to enable the command and control of cyber defense components,
 subsystems and/or systems in a manner
 that is agnostic of the underlying products,
 technologies, transport mechanisms or other aspects of the implementation.
-Stateless packet filtering is a cyber defense mechanism
-that denies or allows traffic based on
-packet properties such as address, port, protocol etc.
-The StateLess Packet Filter (SLPF) actuator profile
-defines the actions, targets, and arguments
-that are consistent with version 1.0 of the
-OpenC2 Language Specification
-in the context of stateless packet filtering.
-This Custom Actuator Profile (CAP) is an extension to the SLPF profile
-for BAWNL, a particular instantiation (see put-link-here-to-lycan-beam-bawnl).
-BAWNL is for Beam AWs Nacl Lycan ie a Lycan (transformer)
-for converting between OpenC2 and AWS NACL's that was implemented on beam,
+Actuator profiles specify the subset of the optional language components that the actuator will respond to.
+This Custom Actuator Profile (CAP) is for a 'hello world'
+actuator haha (Https Api Hello-world Actuator). Haha exists just for the purpose of demonstrating
+the language/profile/transport with the simplest possible
+actuator. Haha also serves as a template for 'real' actuators.
+
+Haha was implemented on beam,
 a highly reliable erlang/elixir virtual machine.
+Several implementations exist (or will) - see (put link here).
 
 ## Status
 This document does not go thru the TC approval process.
@@ -53,11 +52,11 @@ When referencing this specification the following citation format should be used
 
 **[TBSL]**
 
-_Bawnl Custom Actuator Profile_
+_Haha Custom Actuator Profile_
 
 Edited by Duncan Sparrell.
 
-8 June 2018.
+8 July 2018.
 
 
 Latest version: N/A.
@@ -153,6 +152,10 @@ for above guidance.
 -------
 
 # 1 Introduction
+Haha stands for Https Api Hello-world Actuator.
+Haha exists just for the purpose of demonstrating
+the language/profile/transport with the simplest possible
+actuator. Haha also serves as a template for 'real' actuators
 A ‘Stateless-Packet-Filter’ (SLPF) is a policy enforcement mechanism
 that restricts or permits traffic based on
 on packet headers such as source address,
@@ -177,8 +180,7 @@ provide control into the slpf functionality.
 
 The purpose of this document is to:
 
-* Define a profile for the custom extensions to the bawnl profile for operation with bawn instantiation(s).
-* Specify which SLPF optional features are implemented.
+* Define a profile for the custom extensions to the haha profile for operation with haha instantiation(s).
 * Specify all OpenC2 ACTIONS implemented.
 * Specify all OpenC2 TARGETS implemented.
 * Specify all OpenC2 TARGET_SPECIFIERS implemented.
@@ -186,16 +188,16 @@ The purpose of this document is to:
 * Specify the valid command semantics e.g. what combinations of ACTONS/TARGET/TARGET_SPECIFIERS/ARGS are valid.
 * Specify the abstract schema for the command consumer
 
-This bawnl profile:
+This haha profile:
 
 * Does not define or implement ACTIONS beyond those defined in Version 1.0 of the Language Specification.
-* Is conformant with version 1.0 of the OpenC2 Language Specification
+* Is conformant with version 1.0 of the OpenC2 Language Specification as it existed in CSD04 (ref).
 
-Cyber defense systems that are utilizing OpenC2 may require the following components to implement the SLPF  profile:
+Cyber defense systems that are utilizing OpenC2 MAY require the following components to implement the SLPF  profile:
 
-* OpenC2 Producers: Devices that send commands, receive responses, and manage the execution of commands involving one or more SLPF s or other actuators with SLPF  capability. The OpenC2 producer needs _a priori_ knowledge of which commands the actuator can process and execute, therefore must understand the profiles for any device that it intends to command.
-* Devices that receive OpenC2 commands and implement the stateless packet-filtering  profile. Generally these are actuators (i.e., the device implementing the filter) but could be orchestrators (i.e., device that forwards command to the device(s) implementing the filter).
-* An Openc2 Consumer may provide multiple cyber defense mechanisms including stateless packet-filtering  functionality as a subset of its capabilities, thus must implement the SLPF  profile.
+* OpenC2 Producers: Devices that send commands, receive responses, and manage the execution of commands involving one or more haha's or other actuators with haha capability. The OpenC2 producer needs _a priori_ knowledge of which commands the actuator can process and execute, therefore must understand the profiles for any device that it intends to command.
+* Devices that receive OpenC2 commands and implement the haha profile. Generally these are actuators but could be orchestrators.
+* An Openc2 Consumer may provide multiple cyber defense mechanisms including haha functionality as a subset of its capabilities, thus must implement the SLPF  profile.
 
 ## 1.2 Terminology
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this specification are to be interpreted as described in IETF RFC 2119 [RFC2119].
@@ -228,120 +230,71 @@ TBD
 TBD
 
 # 2 OpenC2 Language Binding
-This section defines the set of ACTIONS, TARGETS, SPECIFIERS and ARGUMENTS that are meaningful in the context of SLPF s. This section also describes the format of the RESPONSE frame's status and results field. This section organized into three major subsections; Components, Response and Commands.
+This section defines the set of ACTIONS, TARGETS, SPECIFIERS and ARGUMENTS that are meaningful
+in the context of haha's. This section also describes the format of the RESPONSE frame's status
+and results field. This section organized into three major subsections; Components, Response and Commands.
 
-An OpenC2 command consists of an ACTION/TARGET pair and associated specifiers and arguments.  This section will enumerate the allowed commands, identify which are required and present the associated responses.
+An OpenC2 command consists of an ACTION/TARGET pair and associated specifiers and arguments.
+This section will enumerate the allowed commands,
+identify which are required and present the associated responses.
 
 ## 2.1 OpenC2 Components
-The components of an OpenC2 command include ACTIONS, TARGETS, ACTUATOR and associated  ARGUMENTS and SPECIFIERS which were defined independently.  Appropriate aggregation of the components will define a command-body that is meaningful in the context of a .
+The components of an OpenC2 command include ACTIONS, TARGETS, ACTUATOR and associated
+ARGUMENTS and SPECIFIERS which were defined independently.  
+Appropriate aggregation of the components will define a command-body
+that is meaningful in the context of a haha.
 
 The components of an OpenC2 command include:
 
-* ACTIONS:   A subset of the ACTIONS defined in the OpenC2 Language specification.
+* ACTIONS:   The subset of the ACTIONS defined in the OpenC2 Language specification.
     * This profiles does not define ACTIONS that are external to Version 1.0 of the OpenC2 Language Specification.
-    * This section MAY augment the definition of the actions in the context of a  but does not  define the actions in a manner that is inconsistent with version 1.0 of the OpenC2 language specification .
-* TARGETS:   A subset of the TARGETs and target-specifiers defined in the Language specification that are meaningful in the context of s or a TARGET and target-specifiers that was defined in this specification.
-* ARGUMENTS:  A subset of the COMMAND-ARGUMENTS defined in the Language Specification.
-* ACTUATOR:  A set of specifiers and ACTUATOR-ARGUMENTS that are defined in this specification that are meaningful in the context of SLPF s.
+* TARGETS:   The subset of the TARGETs and target-specifiers defined in the Language specification that are meaningful in the context of haha, and the TARGET and target-specifiers extensions that are defined in this specification.
+* ARGUMENTS: For haha as defined in this CAP, the ARGUMENTS field is unused.
+* ACTUATOR:  For haha as defined in this CAP, the ACTUATOR field is unused (direct connection only so the consumer and producer are mutually identified and authenticated via the transport).
 
 ### 2.1.1 Actions
-Table 1 presents the OpenC2 actions that are meaningful in the context of an SLPF  and identifies which actions are required for at least one target type.  The particular action/ target pairs that are required or optional are presented in section XXX.
+Table 1 presents the OpenC2 actions that are meaningful
+in the context of a haha and identifies
+which actions are required for at least one target type.  
+The particular action/ target pairs
+that are required are presented in section XXX.
 
-**Table 1. SLPF  Actions**
+**Table 1. HAHA Actions**
 
 | Action | Description | Req/ Opt |
 |:---|:---|:---|
 | query | The query action initiates a single request for information. Used to communicate the supported options and determine the state or settings of the .  | Required  |
-| deny | The deny action is used to prevents traffic or access | Required |
-| allow | The allow action permits traffic or access. | Required |
-| delete | Remove  rule(s) as defined in section 2.1.4.2 | Optional  |
 
 ### 2.1.2 Targets
-Table 2 lists the TARGETs that are applicable to s and identifies the which target types are required for at least one action/target pair.
+Table 2 lists the TARGETs that are applicable to haha's
+and identifies the which target types are required for at least one action/target pair.
 
-**Table 2. Target Data Model Applicable to SLPF s**
+**Table 2. Target Data Model Applicable to haha's**
 
 | Target | Description/Notes | Req/Opt |
 |:---|:---|:---|
-| ip_connection | Consists of the address (source and destination), port number (source and destination) and protocol identifier. An 'incomplete' five-tuple may be sent to the . Default for unspecified is "all".  | Required |
-| openc2 | Used to determine the profile(s) and imported targets supported by the actuator  | Required |
-| ap-slpf | Used to enable an openc2 producer to determine the current state or settings of the .  This is an optional target type defined in this specification.  | Optional |
-| ip_addr | In the context of an SLPF , identifies IP address(es) that are to be denied (or allowed) regardless of source or destination.  All other aspects of the ip-connection are to be treated as ‘any’.  Supports IPV4, IPV6 and CIDR notation.  | Required |
-
-Implementation of the the ip_connection AND the ip_addr target is required for OpenC2 producers.
-
-OpenC2 consumers MUST implement the ip_connection OR the ip_addr target.  If a device or instance of the SLPF  supports the ip_connection target, then the ip_addr target is OPTIONAL.  Conversely, if the ip_addr target is implemented, then the ip_connection is OPTIONAL.
+| openc2 | Used to determine the profile(s), schema, and imported targets supported by the actuator  | Required |
+| x_hello | "Hello" of "Hello World".  This is an extension target type defined in this specification.  | Required |
 
 ### 2.1.3 Command Arguments
-Arguments provide additional precision to a command by including information such as how, when or where a command is to be executed.  Table 3 summarizes the command arguments as they relate to SPLF  functionality and identifies which are required to implement for at least one action/target pair.
-
-**Table 3. SLPF  options**
-
-| Modifier | Type | Description | Req/Opt |
-|:---|:---|:---|:---|
-| response | string | Indicate the type of response required for the action. | Required |
-| start-time | datetime | The specific date/time to initiate the action. Implementations SHOULD use UTC to ensure consistency across different time zones. Unspecified start time defaults to ‘now’ | Required |
-| end-time | datetime | The specific date/time to end the action. Implementations SHOULD use Universal Time (UTC) to ensure consistency across different time zones. Unspecified end-time defaults to ‘never’ | Required |
-| duration | int | [=] seconds.  | Required |
-
-The semantics of start-time/end-time/duration are:
-
-* If none are specified then the start time is now and the end time is never and the duration is infinity
-* Only two of the 3 are allowed on any given command and the third is derived from the equation end-time = start-time + duration
-* If only start time is specified then end-time is never and duration is infinity
-* If only end time is specified then start-time is now and duration is derived
-* If only duration is specified then start-time is now and end-time is derived
+Arguments provide additional precision to a command by including information
+such as how, when or where a command is to be executed.  
+This trivially simple actuator uses no command arguments.
 
 ## 2.2 Actuator data model
-This section defines the data model for the profile. The ACTUATOR field within an OpenC2 message command is identified with the actuator profile, and this section defines the actuator-specifiers and actuator-arguments needed for additional precision.
+This section defines the data model for the profile.
+The ACTUATOR field within an OpenC2 message command is identified
+with the actuator profile, and this section defines the actuator-specifiers
+and actuator-arguments needed for additional precision.
+For this trivially simple actuator, the ACTUATOR field is unused.
+Identification and Authentication will be achieved thru the transport.
 
-* The SPECIFIERS provide information with respect to a particular actuator to increasing levels of precision.
-* ACTUATOR ARGUMENTS provide information with respect to how the ACTUATOR is to execute the action.
-
-## 2.3 Actuator Specifiers
-An ACTUATOR is the entity that provides the functionality and performs the action. The ACTUATOR executes the ACTION on the TARGET. In the context of this profile, the actuator is the SPLF  and the presence of one or more specifiers further refine which actuator(s) shall execute the action.
-
-Table 4 identifies the specifiers that are applicable to the SPLF  actuator. Section 3 provides sample commands with the use of specifiers.
-
-**Table 4. SLPF  Specifiers**
-
-### 2.3.1 Type Name: SlpfSpecifiers
-**Base Type: Map**
-
-|  Specifier | Type | Description |
-|:---|:---|:---|
-| hostname | String | RFC 1123 hostname (can be a domain name or IP address) for a particular device with  functionality |
-| Named Group | string | User defined collection of devices with  functionality |
-| Asset_id | string | Unique identifier for a particular  |
-
-## 2.4 Actuator Arguments
-The command arguments that are defined in this specification and apply to SLPF s are presented in Table 5. These options provide detail on how the action is executed.
-
-**Table 5. Action Specific SLPF  Actuator Options**
-
-### 2.4.1 Type Name: SpffArgs
-Base Type: Map
-
-| Specifier | Type | Description |
-|:---|:---|:---|
-| Drop | Boolean | Stop processing and do not send a notification to the source of the packet. |
-| Reject | Boolean | Stop processing and send a notification to the source of the packet. |
-| Complete | Boolean | Stop processing and send a false acknowledgment to the source that the processing was completed. |
-| Running | Boolean | Normal operations assumes any change to a device are to be implemented as persistent changes. Setting the running modifier to TRUE results in a change that is not persistent in the event of a reboot or restart.  |
-| direction | string | Possible settings are ingress, egress or both.  The default value is  both.  Ingress applies the allow to incoming traffic only.  Egress applies to outbound.  Entities that do not support directionality MUST return a 501 error code when they receive ingress or egress as the option and MAY include ‘Directionality not supported’ in the error description.  |
-| prepend | boolean | If set to TRUE, then the new rule is placed at the beginning of the rule list.  If set to FALSE, then the new rule is appended to the list.  The default value is FALSE.  |
-| rule-number | integer | A command option defined in this specification.  An integer. Can only be sent if prepend is NOT sent. Specifies the number of the rule within a list, typically used in a top-down rule list. |
-
-
-
-
-
-
-
-> **Editor's Note** - For now, both the ‘prepend’ option vs the ‘rule_number’ option are present. Discussion regarding whether or not they are redundant is ongoing.
+Note that although the ACTUATOR field is not used in the command,
+the actuator itself exists and has this profile - it's just not included
+in the command since it can be inferred.
 
 ## 2.5 OpenC2 Responses
-Response messages originate from the actuator and are informative rather than a command or request that the recipient execute some task(s).
+Response messages originate from the actuator as a response to a command.
 
 The status codes presented in Table 6 apply to all actions and identifies which responses are required to implement for at least one command.
 
@@ -351,123 +304,12 @@ The formats and what is expected in the response for specific commands will be c
 
 | Status Code | Status Text | Req/Opt |
 |:---|:---|:---|
-| 102 | Processing. Command received but action not necessarily complete | Optional |
 | 200 | OK | Required |
 | 400 | Unable to process command, parsing error | Required |
-| 401 | Authentication or authorization failure | Optional |
-| 403 | Forbidden | MTI |
 | 500 | Server Error | Optional |
-| 501 | Not implemented | Required |
-
-
-
-> **Editor's Note** -No use cases have been defined for 401 and 403 at this time, but the two response  codes were left in for this CSD
-
-> **Editor's Note** -The response descriptions and the ‘response complete’ need to be added here after consensus is reached on the openc2 commands
 
 ## 2.6 OpenC2 Commands
 An OpenC2 command consists of an ACTION/TARGET pair and associated specifiers and arguments.  This section will enumerate the allowed commands, identify which are required and present the associated responses.
-
-Table 7 defines the commands allowed by the  profile indicates which are required.  The subsequent subsections provide the property tables applicable to each OpenC2 command.
-
-**Table 7. Command Matrix**
-
-|   | Allow | Deny | Query | Delete |
-|:---|:---|:---|:---|:---|
-| **ip-connection** | required | required |   |   |
-| **ip-addr** | required | required |   |   |
-| **file** |   |   |   |   |
-| **openc2** |   |   | required |   |
-| **ap-slpf-query** |   |   | optional | optional |
-
-### 2.6.1 ‘Allow’
-Table 8 summarizes the command options that apply to all of the commands consisting of the ‘allow’ action and a valid target type.
-
-Upon receipt of an unsupported  command-option, SLPF s MUST respond with the 501 error code and SHOULD respond with "Option not supported" in the error description.
-
-Products that send ‘allow target’ commands and support the rule_number option:
-
-* MUST support the ap-slpf target type as defined in section 2.3.3.2
-* SHOULD populate the command options field with "response-type="complete” “
-* MUST populate the command-id option if the  "response-type="complete” “
-* MAY populate the command-id option regardless of the presence or lack of other options.
-
-Products that receive ‘allow target’ commands and support the prepend option:
-
-* MUST support the ap-slpf target type as defined in section 2.3.3.2
-* MUST return the rule number assigned to the rule in the ap-slpf object if the "response-type= “complete" “ option is populated.
-
-
-
-**Table 8. Command Arguments**
-
-| Option | Req/Opt | Description/effect |
-|:---|:---|:---|
-| response | Required | Indicates the type of response required from the .  Valid response types are Ack, Complete and None.  The default is none. |
-| start-time | Required | The time when the allow is to take effect. Date Time data format. Implementations SHOULD use UTC. |
-| end-time | Required | The time when the allow rule is to be removed.  Date Time data format.  Implementations SHOULD use UTC. |
-| duration | Required | The amount of time after the start-time for the allow to be in effect, specified in [=] seconds. In the absence of the start-time option, the duration starts from the time the command is processed.  In the event of a conflict the end-time option (if present) takes precedence. |
-| respond-to | Optional | Identifies where the  is to send its response. |
-| running | Optional | A command option defined in this specification. Setting to TRUE results in an ephemeral allow, i.e., the traffic will be allowed while the  is operating, but in the event of a restart, power down, or recovery, the allow rule will not be  retained. If the running option is set to FALSE, then allow commands SHOULD be persistent, i.e., the rule should remain in place in the event of a restart or similar event.  Default value is FALSE. |
-| direction | Optional | A command argument defined in this specification.  Possible settings are ingress, egress or both.  The default value is  both.  Ingress applies the allow to incoming traffic only.  Egress applies to outbound.  Entities that do not support directionality MUST return a 501 error code when they receive ingress or egress as the option and MAY include ‘Directionality not supported’ in the error description. |
-| rule-number | Optional | A command option defined in this specification.  A boolean.  If set to FALSE (default) the allow rule is appended to the rule set.  If set to TRUE, the allow rule is prepended to the rule set. |
-
-The valid target types, associated specifiers, and options are summarized in sections 2.2.1.1 through 2.2.1.2.  Sample commands are presented in appendix A.
-
-### 2.6.2 ‘Allow ip-connection’
-The ‘allow ip_connection’ command is required for openc2 producers implementing the SLPF .
-
-If the ‘allow ip_addr’ target is not implemented, then SLPF consumers MUST implement the ‘allow ip-connection’ command. Otherwise it is OPTIONAL.
-
-The command permits traffic that is consistent with the specified ip_connection.  A valid ‘allow ip-connection’ command has at least one property of the ip_connection populated and may have any combination of the five properties populated.  An unpopulated property within the the ip_connection target must be treated as an ‘any’.
-
-Products that do not implement the ‘allow ip_connection’ command MUST respond with the 501 response code and SHOULD respond with ‘Target type not supported’ in the error description
-
-### 2.6.3 ‘Allow ip-addr’
-The ‘allow ip_addr’ command is required for openc2 producers implementing the SLPF .
-
-If the ‘allow ip_connection’ target is not implemented, then SLPF consumers MUST implement the ‘allow ip_addr’ command. Otherwise the ‘allow ip-addr’ command is OPTIONAL.
-
-The command permits traffic as specified by the ip_addr property and may be an IPV4 or IPV6 address.  The ip-addr supports CIDR notation.  The address specified in the ip_addr MUST be treated as a source OR destination address.
-
-Products that do not implement the ‘allow ip-addr’ command MUST respond with the 501 response code and SHOULD respond with ‘Target type not supported’ in the error description.
-
-### 2.6.4 ‘Deny’
-‘Deny’ can be treated as mathematical complement to ‘allow’.  With the exception of three additional actuator-arguments, the targets, specifiers, options and corresponding responses are identical to the two ‘allow’ commands.  Table 9 summarizes the command arguments that apply to all of the commands consisting of the ‘deny’ action and valid target type.
-
-**Table 9. Deny arguments**
-
-| Option | Req/Opt | Description/effect |
-|:---|:---|:---|
-| drop | Required | A command option defined in this specification. Traffic meeting the criteria of the target specifier(s) is dropped with no other processing.  Default is Drop |
-| reject | Required | A command option defined in this specification. Traffic meeting the criteria of the target specifier(s) is dropped and an ICMP host unreachable (or equivalent) is sent to the source address |
-| complete | Optional | A command option defined in this specification. Traffic meeting the criteria of the target specifier(s) is dropped and receipt of the packet is sent to the source address, i.e. a false acknowledgement  |
-| response | Required | Indicates the type of response required from the .  Valid response types are Ack, Complete and None.  The default is none. |
-| start-time | Required | The time when the deny is to take effect. Date Time data format. |
-| end-time | Required | The time when the deny rule is to be removed.  Date Time data format. |
-| duration | Optional | The amount of time after the start-time for the deny is to be in effect [=] seconds.  In the absence of the start-time option, the duration starts from the time the command is processed. In the event of a conflict the end-time option (if present) takes precedence. |
-| respond-to | Optional | Identifies where the  is to send its response. |
-| running | Required | A command option defined in this specification. Setting to TRUE results in an ephemeral deny, i.e. the traffic will be denied while the  is operating, but in the event of a restart, power down or recovery, the rule will not be  retained. Default value is FALSE |
-| direction | Optional | A command option defined in this specification. Possible settings are ingress, egress or both.  The default value is  both.  Ingress applies the allow to incoming traffic only.  Egress applies to outbound.  Entities that do not support directionality MUST return a 501 error code when they receive ingress or egress as the option and MAY include ‘Directionality not supported’ in the error description. |
-| prepend | Optional | A command option defined in this specification.  A boolean.  If set to FALSE (default) the allow rule is appended to the rule set.  If set to TRUE, the allow rule is prepended to the rule set. |
-
-Upon receipt of a command with an ARGUMENT that is not supported by the actuator, actuators MUST respond with the 501 error code and SHOULD respond with ‘Option not supported’ in the error description.
-
-Products that send ‘deny target’ commands and support the rule-number option:
-
-* MUST support the ap-slpf target type as defined in section 2.3.3.2
-* SHOULD populate the command options field with ‘response-type="complete” ’
-* MUST populate the command-id option if the  ‘response-type="complete”
-* MAY populate the command-id option regardless of the presence or lack of other options.
-* MAY populate the command options field with ‘rule-number = INT’ where INT is an integer.
-* MUST populate the command options field with ‘response-type="complete” ’ if the ‘rule-number = INT ’ option is populated.
-
-Products that receive ‘deny target’ commands and support the rule-number option:
-
-* MUST support the ap-slpf target type as defined in section 2.3.3.2
-* MUST return the rule number assigned in the ap-slpf object if the ‘response-type= "complete" ’ option is populated.
-* MUST use the rule number provided if the ‘rule-number = INT ’ option is populated
-* If the rule number is currently in the rule set, then MUST respond with the 501 error code and SHOULD respond with ‘Rule number currently in use’ in the error description
 
 ### 2.6.5 ‘Query’
 The valid target types, associated specifiers, and options are summarized in sections 2.2.3.1 through 2.2.3.2.  Sample commands are presented in Section 5 appendix A.
@@ -543,35 +385,7 @@ Products that receive  the ‘query ap-slpf’ command:
 
 Refer to section 4 for sample commands.
 
-### 2.6.8 ‘Delete’
-The ap-slpf is the only valid target type for the delete action. The associated specifiers, and options are summarized in section 2.2.4.1.  Sample commands are presented in section 4.
-
 ### 2.6.9 ‘delete ap-slpf’
-The ‘delete ap-slpf’ command is used to remove a  rule rather than issue another allow or deny to counteract the effect of an existing rule. Implementation of the ‘delete ap-slpf’ command is OPTIONAL.  Products that choose to implement the ‘delete ap-slpf’  command MUST implement the ap-slpf target type described in section 2.3.3.1.
-
-Products that send the ‘delete ap-slpf’ command MAY populate the command options field with ‘response-type="complete”.
-
-Products that send the ‘delete ap-slpf’ command MAY populate the command-id.
-
-Products that send the ‘delete ap-slpf’  command MAY populate the respond-to argument.
-
-The ‘delete ap-slpf’  command MUST NOT include other command arguments.
-
-Products that send the ‘delete ap-slpf’ command MUST include exactly one deny-rule OR allow-rule as described in table 2.2.1.2.
-
-The deny-rule OR allow-rule MUST include the rule number and MAY include the corresponding ip_connection or ip_addr.
-
-Products that receive, but cannot parse or process the ‘delete ap-slpf’ command MUST respond with response code 400.
-
-Products that receive but do not support the ap-slpf target type MUST respond with error code 501 and SHOULD respond with error description ‘target type not supported’
-
-Upon successful parsing of the ‘delete ap-slpf’ command and subsequent removal of the corresponding rule, products MUST respond with response code 200.
-
-Upon successful parsing of the ‘delete ap-slpf’ command and failure to remove the corresponding rule, products MUST respond with response code 500 and SHOULD respond with error description ‘ rule not removed or updated’.
-
-Refer to section 4 for sample commands.
-
-This page intentionally left blank.
 
 # 3 Conformance statements
 > **Editor's Note** - This section is a placeholder.  The conformance clauses stated within the body of the profile will be repeated here once general consensus is reached.<Note: need to define "support" - behavior that must occur as a result of executing commands>
@@ -589,184 +403,14 @@ Conformant implementations of OpenC2  Functions:
 > **Editor's Note** - This section is a placeholder.  The normative and non-normative references will be populated once general consensus is reached.
 
 
-
-1. https://www.cisco.com/c/en/us/products/security/s/what-is-a-.html
-2. https://www.juniper.net/uk/en/solutions/software-defined-secure-networks/next-gen-
-3. https://www.paloaltonetworks.com/cyberpedia/what-is-a-
-
-This page intentionally left blank.
-
 # Appendix A. Sample commands
 > **Editor's Note** - This section is a placeholder.  he syntax of the sample commands all must be reworked in accordance with the changes that occured in the language specification
-
-
 
 This section will summarize and provide examples of OpenC2 commands as they pertain to s. The sample commands will be encoded in verbose JSON, however other encodings are possible provided the command is validated against the schema presented in Appendix A. Examples of corresponding responses and/or alerts will be provided where appropriate.
 
 The samples provided in this section are for illustrative purposes only and are not to be interpreted as operational examples for actual systems. Within the scope of this document, a # character indicates a comment, however it should be noted that OpenC2 itself does not support comments within a command.
 
-## 5.1 Deny and Allow
-Deny and allow are mandatory to implement and can be treated as mathematical complements of each other. Unless otherwise stated, the example targets, specifiers, modifiers and corresponding responses are applicable to both actions.
 
-```
-# Block a particular connection within the domain and do not send a host unreachable
-{
-    "action": "deny",
-    "target": {
-        "ip_connection": {
-            "layer4_protocol": "TCP",
-            "src_addr": {"1.2.3.4"},
-            "src_port": {10996},
-            "dst_addr": {198.2.3.4},
-            "dst_port": {80}
-        }
-    },
-    "actuator": {
-        "": {
-            "asset_id": "30"
-		Options:{drop}
-        }
-    },
-    "command-options": {
-        ,
-        "start_time": "2016-11-25T08:10:31-04:00",
-        "duration": 600,
-        "command_id": "fw17_8675309"
-    }
-}
-```
-
-```
-# Block all ftp data transfers from hosts, send false acknowledgement and request ack. Note that the five-tuple is incomplete
-{
-    "action": "deny",
-    "target": {
-        "type": ":ip_connection",
-        "specifiers": {
-            "Layer4Protocol": "TCP",
-            "src-port": 21
-        }
-    }
-    "actuator": {
-        "type": "openc2:",
-        "specifiers": {endpoint},
-        "options":{complete}
-    },
-    "command-options": {
-        {"id":"UUID=123e4567-e89b-12d3-a456-426655440000"}
-        {response="Ack”}
-    }
-}
-# Note that the response was requested and all endpoints that can execute the command should.
-```
-
-```
-# In this case, one of the endpoints successfully issued the deny but the endpoint located at 198.51.100.17 failed
-{
-    response
-        {Source: ip-addr=198.51.100.17}
-        {cmdref=123e4567-e89b-12d3-a456-426655440000 }
-        {statuscode=200}
-}
-{
-    response
-        {Source: ip-addr=198.51.100.18}
-        {cmdref=123e4567-e89b-12d3-a456-426655440000 }
-        {statuscode=400}
-}
-```
-
-```
-# Allow ftp data transfers to a particular ip address from any host. Note that the five-tuple is incomplete
-{
-    "action": "allow",
-    "target": {
-        "type": "ip-connection",
-        "specifiers": {
-            "Layer4Protocol": "TCP",
-            "dst-addr": 198.51.100.17
-            "src-port": 21
-        }
-    }
-      "command-options": {
-            "id":"UUID=123e4567-e89b-12d3-a456-426655440000"
-            "response":”Ack”
-        }
-    }
-}
-#
-{
-    response
-        {Source: openc2:ip-addr=1.2.3.4}
-        {cmdref=123e4567-e89b-12d3-a456-426655440000 }
-        {statuscode=200}
-}
-```
-
-## 5.2 Update
-Implementation of the Update action is optional.  Update is intended for the device to process new configuration files, software updates, patches, policy updates etc. The update action is a compound action in that all of the steps required for a successful update (such as download the new file, install the file, reboot etc.) are implied. File is the only valid target type for Update.
-
-```
-# instructs the s to acquire a new configuration file. Note that all network based s will install the new update because no particular  was identified. Host based s will not act on this because network s were identified as the actuator.
-
-{
-    "action": "update",
-    "target": {
-        "file": {
-            "parent_directory": {
-            "path":"\\\\someshared-drive\\somedirectory\\configurations"},
-            "name": "configuration.txt"
-        }
-    },
-    "actuator": {
-        "openc2:": {
-            "named-group":"network"
-        }
-    }
-    "Command-options"{
-	Command-id:123e4567-e89b-12d3-a456-426655440000
-}
-}
-```
-
-```
-Note the responses.  One of the devices successfully updated the configuration file.  Another device responded with an error because it does not support the ‘update file’ command
-
-{
-    response
-        {Source: openc2:ip-addr=1.2.3.4}
-        {cmdref=123e4567-e89b-12d3-a456-426655440000 }
-        {statuscode=200}
-}
-
-{
-    response
-        {Source: openc2:ip-addr=1.2.3.5}
-        {cmdref=123e4567-e89b-12d3-a456-426655440000 }
-        {statuscode=501}
-	  {statustext:"command not supported”}
-}
-```
-
-```
-# Instructs any  running a particular software load to install a software upgrade
-{
-    "action": "update",
-    "target": {
-        "file": {
-            "parent_directory": {
-                "path": "\\\\someshared-drive\\somedirectory\\so"
-            },
-            "name": " version2.ofsoftware.exe"
-        }
-    },
-    "actuator": {
-        "openc2:": {
-            "x-tagID": "companyversion2.1"
-        }
-    }
-}
-```
 
 **7.4 Query**
 

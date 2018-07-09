@@ -374,6 +374,7 @@ Products that receive  the ‘query ap-slpf’ command:
 Refer to section 4 for sample commands.
 
 # 3 transport
+Haha transport SHALL be per [Specification for Transfer of OpenC2 Messages via HTTPS Version 1.0 (wip at moment)](https://github.com/oasis-tcs/openc2-impl-https/blob/master/oc2-over-https-v1.0-WD01-wip.md).
 
 # 4 Conformance statements
 > **Editor's Note** - This section is a placeholder.  The conformance clauses stated within the body of the profile will be repeated here once general consensus is reached.<Note: need to define "support" - behavior that must occur as a result of executing commands>

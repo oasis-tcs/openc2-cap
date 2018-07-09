@@ -239,20 +239,24 @@ This section will enumerate the allowed commands,
 identify which are required and present the associated responses.
 
 ## 2.1 OpenC2 Components
-The components of an OpenC2 command include ACTIONS, TARGETS, ACTUATOR and associated
+The components of an OpenC2 command include ID, ACTIONS, TARGETS, ACTUATOR and associated
 ARGUMENTS and SPECIFIERS which were defined independently.  
 Appropriate aggregation of the components will define a command-body
 that is meaningful in the context of a haha.
 
 The components of an OpenC2 command include:
 
+* ID: The ID as specified in the OpenC2 Language Specifiction
 * ACTIONS:   The subset of the ACTIONS defined in the OpenC2 Language specification.
     * This profiles does not define ACTIONS that are external to Version 1.0 of the OpenC2 Language Specification.
 * TARGETS:   The subset of the TARGETs and target-specifiers defined in the Language specification that are meaningful in the context of haha, and the TARGET and target-specifiers extensions that are defined in this specification.
 * ARGUMENTS: For haha as defined in this CAP, the ARGUMENTS field is unused.
 * ACTUATOR:  For haha as defined in this CAP, the ACTUATOR field is unused (direct connection only so the consumer and producer are mutually identified and authenticated via the transport).
 
-### 2.1.1 Actions
+### 2.1.1 ID
+The command ID is REQUIRED.
+
+### 2.1.2 Actions
 Table 1 presents the OpenC2 actions that are meaningful
 in the context of a haha and identifies
 which actions are required for at least one target type.  
@@ -265,7 +269,7 @@ that are required are presented in section XXX.
 |:---|:---|:---|
 | query | The query action initiates a single request for information. Used to communicate the supported options and determine the state or settings of the .  | Required  |
 
-### 2.1.2 Targets
+### 2.1.3 Targets
 Table 2 lists the TARGETs that are applicable to haha's
 and identifies the which target types are required for at least one action/target pair.
 
@@ -276,7 +280,7 @@ and identifies the which target types are required for at least one action/targe
 | openc2 | Used to determine the profile(s), schema, and imported targets supported by the actuator  | Required |
 | x_hello | "Hello" of "Hello World".  This is an extension target type defined in this specification.  | Required |
 
-### 2.1.3 Command Arguments
+### 2.1.4 Command Arguments
 Arguments provide additional precision to a command by including information
 such as how, when or where a command is to be executed.  
 This trivially simple actuator uses no command arguments.
@@ -341,30 +345,14 @@ Products that receive the ‘query openc2’ command:
 * Upon successful parsing and processing of the query openc2 command, products MUST respond with response code 200. The results field MUST be populated with the openc2 target type and associated specifiers identified in the command.
 * If no specifiers were identified in the openc2 command, then the results field MUST contain all of the specifiers identified in Table 10.  Refer to section 4 for sample commands.
 
-### 2.6.7 ‘Query ap-slpf-query’
-The ‘query ap-slpf’ command is used to determine the current settings of the .   Implementation of the ‘query ap-slpf’ command is OPTIONAL.  The ap-slpf  target is defined in this specification. Implementations that choose to include the ap-slpf-query target type MUST import it in accordance with the procedures defined in section 2.2.6 of Version 1.0 of the OpenC2 Language Specification.   The ap-slpf-query data profile are:
+### 2.6.7 ‘Query x_hello’
+The ‘query x_hello’ command is the "Hello World" raison d'etre of the actuator.
+Implementation of the ‘query x_hello’ command is REQUIRED.
+The x_hello target is defined in this specification. Response to the x_hello query is "World".
 
-1. The namespace identifier is:  ap-slpf-query
-2. The name for the data profile is:  /docs.oasis-open.org/openc2/futurepath4profiles
-3. A list of the object identifiers to be imported.  Permitted objects are presented in table 2.2.1.2.  Implementations that choose to include the ap-slpf-query MUST include the objects listed as ‘required’ and MAY include the objects listed as optional.
+#### 2.6.7.1 Type Name: x_hello
+Base Type: String
 
-#### 2.6.7.1 Type Name: Spff-Target
-Base Type: ArrayOf(Spff-Query-Item)
-
-#### 2.6.7.2 Type Name: Spff-Query-Item
-Base Type: Enumerated
-
-| ID | Name | Description |
-|:---|:---|:---|
-| 1 | allow-rules | Return allow-rules value in the response |
-| 2 | deny-rules | Return deny-rules value in the response |
-
-| Specifier | Implement | Type | Values/Description |
-|:---|:---|:---|:---|
-| allow-rules | Required | array | A 2xn array where [0,i] is an  ip-connection or ip_addr object that is explicitly allowed by the  and [1,i] is the corresponding rule number.  The second element of the array is optional.  |
-| deny-rules | Required | array | A 2xn array where [0,i] is an A list of ip-connection or ip_addr objects that is are explicitly denied by the  and [1,i] is the corresponding rule number.  The second element of the array is optional. |
-
-Products that send the ‘query ap-slpf’ command:
 
 * MUST populate the command options field with ‘response-type="complete”.
 * MUST populate the command-id.

@@ -1,7 +1,3 @@
-[SIS Logo](image_0.png)
-
--------
-
 # Bawnl Custom Actuator Profile
 
 ## 8 June 2018

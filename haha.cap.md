@@ -373,8 +373,6 @@ Products that receive  the ‘query ap-slpf’ command:
 
 Refer to section 4 for sample commands.
 
-### 2.6.9 ‘delete ap-slpf’
-
 # 3 Conformance statements
 > **Editor's Note** - This section is a placeholder.  The conformance clauses stated within the body of the profile will be repeated here once general consensus is reached.<Note: need to define "support" - behavior that must occur as a result of executing commands>
 

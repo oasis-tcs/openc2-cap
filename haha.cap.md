@@ -373,7 +373,9 @@ Products that receive  the ‘query ap-slpf’ command:
 
 Refer to section 4 for sample commands.
 
-# 3 Conformance statements
+# 3 transport
+
+# 4 Conformance statements
 > **Editor's Note** - This section is a placeholder.  The conformance clauses stated within the body of the profile will be repeated here once general consensus is reached.<Note: need to define "support" - behavior that must occur as a result of executing commands>
 
 
@@ -385,11 +387,7 @@ Conformant implementations of OpenC2  Functions:
 * MAY implement any serialization that provides a one to one mapping of the data elements as defined in the abstract schema presented in the Language Specification to a format that is consistent with the syntax defined in Appendix B OpenC2 SCHEMA –  FUNCTIONS.
 * MUST implement the actuator data model as presented in the abstract schema presented in Appendix B.
 
-# 4 References
-> **Editor's Note** - This section is a placeholder.  The normative and non-normative references will be populated once general consensus is reached.
-
-
-# Appendix A. Sample commands
+# Annex A. Sample commands
 > **Editor's Note** - This section is a placeholder.  he syntax of the sample commands all must be reworked in accordance with the changes that occured in the language specification
 
 This section will summarize and provide examples of OpenC2 commands as they pertain to s. The sample commands will be encoded in verbose JSON, however other encodings are possible provided the command is validated against the schema presented in Appendix A. Examples of corresponding responses and/or alerts will be provided where appropriate.

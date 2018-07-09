@@ -17,7 +17,7 @@ Open Command and Control (OpenC2) is a concise and extensible language
 to enable the command and control of cyber defense components,
 subsystems and/or systems in a manner
 that is agnostic of the underlying products,
-technologies, transport mechanisms or other aspects of the implementation.  
+technologies, transport mechanisms or other aspects of the implementation.
 Stateless packet filtering is a cyber defense mechanism
 that denies or allows traffic based on
 packet properties such as address, port, protocol etc.
@@ -25,7 +25,7 @@ The StateLess Packet Filter (SLPF) actuator profile
 defines the actions, targets, and arguments
 that are consistent with version 1.0 of the
 OpenC2 Language Specification
-in the context of stateless packet filtering.    
+in the context of stateless packet filtering.
 This Custom Actuator Profile (CAP) is an extension to the SLPF profile
 for BAWNL, a particular instantiation (see put-link-here-to-lycan-beam-bawnl).
 BAWNL is for Beam AWs Nacl Lycan ie a Lycan (transformer)
@@ -160,10 +160,10 @@ for above guidance.
 A ‘Stateless-Packet-Filter’ (SLPF) is a policy enforcement mechanism
 that restricts or permits traffic based on
 on packet headers such as source address,
-destination address, and/or port numbers.  
+destination address, and/or port numbers.
 A SLPF does not retain state information between packets.
 A SLPF does not consider traffic patterns, connection state, data flows,
-applications, or payload information.  
+applications, or payload information.
 The OASIS OpenC2 TC has drafted an OpenC2 Actuator Profile for SLPF
 which this document extends for the particular instantiation of a SLPF
 using bawnl (link here) to interface to AWS NACL's which implement the
@@ -234,10 +234,10 @@ TBD
 # 2 OpenC2 Language Binding
 This section defines the set of ACTIONS, TARGETS, SPECIFIERS and ARGUMENTS that are meaningful in the context of SLPF s. This section also describes the format of the RESPONSE frame's status and results field. This section organized into three major subsections; Components, Response and Commands.
 
-An OpenC2 command consists of an ACTION/TARGET pair and associated specifiers and arguments.  This section will enumerate the allowed commands, identify which are required and present the associated responses.  
+An OpenC2 command consists of an ACTION/TARGET pair and associated specifiers and arguments.  This section will enumerate the allowed commands, identify which are required and present the associated responses.
 
 ## 2.1 OpenC2 Components
-The components of an OpenC2 command include ACTIONS, TARGETS, ACTUATOR and associated  ARGUMENTS and SPECIFIERS which were defined independently.  Appropriate aggregation of the components will define a command-body that is meaningful in the context of a .  
+The components of an OpenC2 command include ACTIONS, TARGETS, ACTUATOR and associated  ARGUMENTS and SPECIFIERS which were defined independently.  Appropriate aggregation of the components will define a command-body that is meaningful in the context of a .
 
 The components of an OpenC2 command include:
 
@@ -249,7 +249,7 @@ The components of an OpenC2 command include:
 * ACTUATOR:  A set of specifiers and ACTUATOR-ARGUMENTS that are defined in this specification that are meaningful in the context of SLPF s.
 
 ### 2.1.1 Actions
-Table 1 presents the OpenC2 actions that are meaningful in the context of an SLPF  and identifies which actions are required for at least one target type.  The particular action/ target pairs that are required or optional are presented in section XXX.  
+Table 1 presents the OpenC2 actions that are meaningful in the context of an SLPF  and identifies which actions are required for at least one target type.  The particular action/ target pairs that are required or optional are presented in section XXX.
 
 **Table 1. SLPF  Actions**
 
@@ -272,9 +272,9 @@ Table 2 lists the TARGETs that are applicable to s and identifies the which targ
 | ap-slpf | Used to enable an openc2 producer to determine the current state or settings of the .  This is an optional target type defined in this specification.  | Optional |
 | ip_addr | In the context of an SLPF , identifies IP address(es) that are to be denied (or allowed) regardless of source or destination.  All other aspects of the ip-connection are to be treated as ‘any’.  Supports IPV4, IPV6 and CIDR notation.  | Required |
 
-Implementation of the the ip_connection AND the ip_addr target is required for OpenC2 producers.   
+Implementation of the the ip_connection AND the ip_addr target is required for OpenC2 producers.
 
-OpenC2 consumers MUST implement the ip_connection OR the ip_addr target.  If a device or instance of the SLPF  supports the ip_connection target, then the ip_addr target is OPTIONAL.  Conversely, if the ip_addr target is implemented, then the ip_connection is OPTIONAL.   
+OpenC2 consumers MUST implement the ip_connection OR the ip_addr target.  If a device or instance of the SLPF  supports the ip_connection target, then the ip_addr target is OPTIONAL.  Conversely, if the ip_addr target is implemented, then the ip_connection is OPTIONAL.
 
 ### 2.1.3 Command Arguments
 Arguments provide additional precision to a command by including information such as how, when or where a command is to be executed.  Table 3 summarizes the command arguments as they relate to SPLF  functionality and identifies which are required to implement for at least one action/target pair.
@@ -319,7 +319,7 @@ Table 4 identifies the specifiers that are applicable to the SPLF  actuator. Sec
 | Asset_id | string | Unique identifier for a particular  |
 
 ## 2.4 Actuator Arguments
-The command arguments that are defined in this specification and apply to SLPF s are presented in Table 5. These options provide detail on how the action is executed.  
+The command arguments that are defined in this specification and apply to SLPF s are presented in Table 5. These options provide detail on how the action is executed.
 
 **Table 5. Action Specific SLPF  Actuator Options**
 
@@ -370,7 +370,7 @@ The formats and what is expected in the response for specific commands will be c
 > **Editor's Note** -The response descriptions and the ‘response complete’ need to be added here after consensus is reached on the openc2 commands
 
 ## 2.6 OpenC2 Commands
-An OpenC2 command consists of an ACTION/TARGET pair and associated specifiers and arguments.  This section will enumerate the allowed commands, identify which are required and present the associated responses.  
+An OpenC2 command consists of an ACTION/TARGET pair and associated specifiers and arguments.  This section will enumerate the allowed commands, identify which are required and present the associated responses.
 
 Table 7 defines the commands allowed by the  profile indicates which are required.  The subsequent subsections provide the property tables applicable to each OpenC2 command.
 
@@ -385,7 +385,7 @@ Table 7 defines the commands allowed by the  profile indicates which are require
 | **ap-slpf-query** |   |   | optional | optional |
 
 ### 2.6.1 ‘Allow’
-Table 8 summarizes the command options that apply to all of the commands consisting of the ‘allow’ action and a valid target type.  
+Table 8 summarizes the command options that apply to all of the commands consisting of the ‘allow’ action and a valid target type.
 
 Upon receipt of an unsupported  command-option, SLPF s MUST respond with the 501 error code and SHOULD respond with "Option not supported" in the error description.
 
@@ -416,28 +416,28 @@ Products that receive ‘allow target’ commands and support the prepend option
 | direction | Optional | A command argument defined in this specification.  Possible settings are ingress, egress or both.  The default value is  both.  Ingress applies the allow to incoming traffic only.  Egress applies to outbound.  Entities that do not support directionality MUST return a 501 error code when they receive ingress or egress as the option and MAY include ‘Directionality not supported’ in the error description. |
 | rule-number | Optional | A command option defined in this specification.  A boolean.  If set to FALSE (default) the allow rule is appended to the rule set.  If set to TRUE, the allow rule is prepended to the rule set. |
 
-The valid target types, associated specifiers, and options are summarized in sections 2.2.1.1 through 2.2.1.2.  Sample commands are presented in appendix A.  
+The valid target types, associated specifiers, and options are summarized in sections 2.2.1.1 through 2.2.1.2.  Sample commands are presented in appendix A.
 
 ### 2.6.2 ‘Allow ip-connection’
-The ‘allow ip_connection’ command is required for openc2 producers implementing the SLPF .  
+The ‘allow ip_connection’ command is required for openc2 producers implementing the SLPF .
 
-If the ‘allow ip_addr’ target is not implemented, then SLPF consumers MUST implement the ‘allow ip-connection’ command. Otherwise it is OPTIONAL.  
+If the ‘allow ip_addr’ target is not implemented, then SLPF consumers MUST implement the ‘allow ip-connection’ command. Otherwise it is OPTIONAL.
 
-The command permits traffic that is consistent with the specified ip_connection.  A valid ‘allow ip-connection’ command has at least one property of the ip_connection populated and may have any combination of the five properties populated.  An unpopulated property within the the ip_connection target must be treated as an ‘any’.  
+The command permits traffic that is consistent with the specified ip_connection.  A valid ‘allow ip-connection’ command has at least one property of the ip_connection populated and may have any combination of the five properties populated.  An unpopulated property within the the ip_connection target must be treated as an ‘any’.
 
 Products that do not implement the ‘allow ip_connection’ command MUST respond with the 501 response code and SHOULD respond with ‘Target type not supported’ in the error description
 
 ### 2.6.3 ‘Allow ip-addr’
-The ‘allow ip_addr’ command is required for openc2 producers implementing the SLPF .  
+The ‘allow ip_addr’ command is required for openc2 producers implementing the SLPF .
 
-If the ‘allow ip_connection’ target is not implemented, then SLPF consumers MUST implement the ‘allow ip_addr’ command. Otherwise the ‘allow ip-addr’ command is OPTIONAL.  
+If the ‘allow ip_connection’ target is not implemented, then SLPF consumers MUST implement the ‘allow ip_addr’ command. Otherwise the ‘allow ip-addr’ command is OPTIONAL.
 
 The command permits traffic as specified by the ip_addr property and may be an IPV4 or IPV6 address.  The ip-addr supports CIDR notation.  The address specified in the ip_addr MUST be treated as a source OR destination address.
 
 Products that do not implement the ‘allow ip-addr’ command MUST respond with the 501 response code and SHOULD respond with ‘Target type not supported’ in the error description.
 
 ### 2.6.4 ‘Deny’
-‘Deny’ can be treated as mathematical complement to ‘allow’.  With the exception of three additional actuator-arguments, the targets, specifiers, options and corresponding responses are identical to the two ‘allow’ commands.  Table 9 summarizes the command arguments that apply to all of the commands consisting of the ‘deny’ action and valid target type.  
+‘Deny’ can be treated as mathematical complement to ‘allow’.  With the exception of three additional actuator-arguments, the targets, specifiers, options and corresponding responses are identical to the two ‘allow’ commands.  Table 9 summarizes the command arguments that apply to all of the commands consisting of the ‘deny’ action and valid target type.
 
 **Table 9. Deny arguments**
 
@@ -463,7 +463,7 @@ Products that send ‘deny target’ commands and support the rule-number option
 * SHOULD populate the command options field with ‘response-type="complete” ’
 * MUST populate the command-id option if the  ‘response-type="complete”
 * MAY populate the command-id option regardless of the presence or lack of other options.
-* MAY populate the command options field with ‘rule-number = INT’ where INT is an integer.  
+* MAY populate the command options field with ‘rule-number = INT’ where INT is an integer.
 * MUST populate the command options field with ‘response-type="complete” ’ if the ‘rule-number = INT ’ option is populated.
 
 Products that receive ‘deny target’ commands and support the rule-number option:
@@ -474,10 +474,10 @@ Products that receive ‘deny target’ commands and support the rule-number opt
 * If the rule number is currently in the rule set, then MUST respond with the 501 error code and SHOULD respond with ‘Rule number currently in use’ in the error description
 
 ### 2.6.5 ‘Query’
-The valid target types, associated specifiers, and options are summarized in sections 2.2.3.1 through 2.2.3.2.  Sample commands are presented in Section 5 appendix A.  
+The valid target types, associated specifiers, and options are summarized in sections 2.2.3.1 through 2.2.3.2.  Sample commands are presented in Section 5 appendix A.
 
 ### 2.6.6 ‘Query openc2’
-The ‘query openc2’ command is used to determine the capabilities of the actuator.  SLPF s MUST implement the ‘query openc2’ command. The specifiers for the openc2 target type are summarized in table 10.  
+The ‘query openc2’ command is used to determine the capabilities of the actuator.  SLPF s MUST implement the ‘query openc2’ command. The specifiers for the openc2 target type are summarized in table 10.
 
 **Table 10. Specifiers for the openc2 target type**
 
@@ -489,26 +489,26 @@ The ‘query openc2’ command is used to determine the capabilities of the actu
 | serialization | Required | list | MUST include ‘json’.  MAY include other serializations that are validated against the abstract schema presented in appendix B |
 | product | Optional | string | The particular vendor product or image such as iptables, amazon, azure etc |
 
-Products that send the ‘query openc2’ command:  
+Products that send the ‘query openc2’ command:
 
-* MUST populate the command options field with ‘response-type="complete” ‘.  
+* MUST populate the command options field with ‘response-type="complete” ‘.
 * MUST populate the command-id.
 * MAY populate the respond-to option.
-* MUST NOT include other command arguments.  
-* MAY include one or more of the openc2 specifiers identified in table 2.2.1.1.  
+* MUST NOT include other command arguments.
+* MAY include one or more of the openc2 specifiers identified in table 2.2.1.1.
 
 Products that receive the ‘query openc2’ command:
 
-* That cannot parse or process the query openc2 command MUST respond with response code 400.  
-* Upon successful parsing and processing of the query openc2 command, products MUST respond with response code 200. The results field MUST be populated with the openc2 target type and associated specifiers identified in the command.  
-* If no specifiers were identified in the openc2 command, then the results field MUST contain all of the specifiers identified in Table 10.  Refer to section 4 for sample commands.  
+* That cannot parse or process the query openc2 command MUST respond with response code 400.
+* Upon successful parsing and processing of the query openc2 command, products MUST respond with response code 200. The results field MUST be populated with the openc2 target type and associated specifiers identified in the command.
+* If no specifiers were identified in the openc2 command, then the results field MUST contain all of the specifiers identified in Table 10.  Refer to section 4 for sample commands.
 
 ### 2.6.7 ‘Query ap-slpf-query’
 The ‘query ap-slpf’ command is used to determine the current settings of the .   Implementation of the ‘query ap-slpf’ command is OPTIONAL.  The ap-slpf  target is defined in this specification. Implementations that choose to include the ap-slpf-query target type MUST import it in accordance with the procedures defined in section 2.2.6 of Version 1.0 of the OpenC2 Language Specification.   The ap-slpf-query data profile are:
 
 1. The namespace identifier is:  ap-slpf-query
 2. The name for the data profile is:  /docs.oasis-open.org/openc2/futurepath4profiles
-3. A list of the object identifiers to be imported.  Permitted objects are presented in table 2.2.1.2.  Implementations that choose to include the ap-slpf-query MUST include the objects listed as ‘required’ and MAY include the objects listed as optional.  
+3. A list of the object identifiers to be imported.  Permitted objects are presented in table 2.2.1.2.  Implementations that choose to include the ap-slpf-query MUST include the objects listed as ‘required’ and MAY include the objects listed as optional.
 
 #### 2.6.7.1 Type Name: Spff-Target
 Base Type: ArrayOf(Spff-Query-Item)
@@ -528,52 +528,52 @@ Base Type: Enumerated
 
 Products that send the ‘query ap-slpf’ command:
 
-* MUST populate the command options field with ‘response-type="complete”.  
+* MUST populate the command options field with ‘response-type="complete”.
 * MUST populate the command-id.
 * MAY populate the respond-to argument.
-* MUST NOT include other command arguments.  
-* MAY include one or more of the ap-slpf-query specifiers identified in table 2.2.1.2.  
+* MUST NOT include other command arguments.
+* MAY include one or more of the ap-slpf-query specifiers identified in table 2.2.1.2.
 
 Products that receive  the ‘query ap-slpf’ command:
 
 * MUST respond with response code 400 if the command cannot be parsed or processed.
 * MUST respond with error code 501 and MAY respond with error description ‘data model not supported’ if the product does not support the ap-slpf target type
-* Upon successful parsing and processing of the ‘query ap-slpf’ command, products MUST respond with response code 200 and populate the results field with the ap-slpf-query target type and associated specifiers identified in the command.  
+* Upon successful parsing and processing of the ‘query ap-slpf’ command, products MUST respond with response code 200 and populate the results field with the ap-slpf-query target type and associated specifiers identified in the command.
 * If one or more ip-connection objects were explicitly listed in the allow-rules specifier, then the actuator returns the ip-connection if it is explicitly allowed.  An empty string implies that the ip-connection is not allowed.
 * If one or more ip-connection objects were explicitly listed in the deny-rules specifier, then the actuator returns the ip-connection if it is explicitly denied.  An empty string implies that the ip-connection is not denied.
-* If no ip-connection objects were explicitly listed in the allow-rules specifier, then the actuator MUST return the complete list of ip-connection objects that are explicitly allowed.  
-* If no ip-connection objects were explicitly listed in the deny-rules specifier, then the actuator MUST return the complete list of ip-connection objects that are explicitly denied.  
-* If no specifiers were identified in the query ap-slpf-query command, then the results field MUST return the entire allow and deny list.   
+* If no ip-connection objects were explicitly listed in the allow-rules specifier, then the actuator MUST return the complete list of ip-connection objects that are explicitly allowed.
+* If no ip-connection objects were explicitly listed in the deny-rules specifier, then the actuator MUST return the complete list of ip-connection objects that are explicitly denied.
+* If no specifiers were identified in the query ap-slpf-query command, then the results field MUST return the entire allow and deny list.
 
-Refer to section 4 for sample commands.  
+Refer to section 4 for sample commands.
 
 ### 2.6.8 ‘Delete’
-The ap-slpf is the only valid target type for the delete action. The associated specifiers, and options are summarized in section 2.2.4.1.  Sample commands are presented in section 4.  
+The ap-slpf is the only valid target type for the delete action. The associated specifiers, and options are summarized in section 2.2.4.1.  Sample commands are presented in section 4.
 
 ### 2.6.9 ‘delete ap-slpf’
 The ‘delete ap-slpf’ command is used to remove a  rule rather than issue another allow or deny to counteract the effect of an existing rule. Implementation of the ‘delete ap-slpf’ command is OPTIONAL.  Products that choose to implement the ‘delete ap-slpf’  command MUST implement the ap-slpf target type described in section 2.3.3.1.
 
-Products that send the ‘delete ap-slpf’ command MAY populate the command options field with ‘response-type="complete”.  
+Products that send the ‘delete ap-slpf’ command MAY populate the command options field with ‘response-type="complete”.
 
 Products that send the ‘delete ap-slpf’ command MAY populate the command-id.
 
 Products that send the ‘delete ap-slpf’  command MAY populate the respond-to argument.
 
-The ‘delete ap-slpf’  command MUST NOT include other command arguments.  
+The ‘delete ap-slpf’  command MUST NOT include other command arguments.
 
-Products that send the ‘delete ap-slpf’ command MUST include exactly one deny-rule OR allow-rule as described in table 2.2.1.2.  
+Products that send the ‘delete ap-slpf’ command MUST include exactly one deny-rule OR allow-rule as described in table 2.2.1.2.
 
 The deny-rule OR allow-rule MUST include the rule number and MAY include the corresponding ip_connection or ip_addr.
 
-Products that receive, but cannot parse or process the ‘delete ap-slpf’ command MUST respond with response code 400.  
+Products that receive, but cannot parse or process the ‘delete ap-slpf’ command MUST respond with response code 400.
 
 Products that receive but do not support the ap-slpf target type MUST respond with error code 501 and SHOULD respond with error description ‘target type not supported’
 
-Upon successful parsing of the ‘delete ap-slpf’ command and subsequent removal of the corresponding rule, products MUST respond with response code 200.  
+Upon successful parsing of the ‘delete ap-slpf’ command and subsequent removal of the corresponding rule, products MUST respond with response code 200.
 
-Upon successful parsing of the ‘delete ap-slpf’ command and failure to remove the corresponding rule, products MUST respond with response code 500 and SHOULD respond with error description ‘ rule not removed or updated’.  
+Upon successful parsing of the ‘delete ap-slpf’ command and failure to remove the corresponding rule, products MUST respond with response code 500 and SHOULD respond with error description ‘ rule not removed or updated’.
 
-Refer to section 4 for sample commands.  
+Refer to section 4 for sample commands.
 
 This page intentionally left blank.
 
@@ -713,7 +713,7 @@ Implementation of the Update action is optional.  Update is intended for the dev
 ```
 # instructs the s to acquire a new configuration file. Note that all network based s will install the new update because no particular  was identified. Host based s will not act on this because network s were identified as the actuator.
 
-{ 	
+{
     "action": "update",
     "target": {
         "file": {
@@ -774,15 +774,20 @@ Note the responses.  One of the devices successfully updated the configuration f
 
 **7.4 Query**
 
-The query action is used to gather some set of information from the .  There are two valid target types for the query command;  ‘openc2’ and ‘ap-slpf-query’.
+The query action is used to gather some set of information from the actuator.  
+There are two valid target types for the query command;  
+‘openc2’ and ‘hello’.
 
-Implementation of query openc2 is required.  The query openc2 command is intended to enable the openc2 producer to determine the capabilities of the actuator.  The query openc2 command can also be used to check the status of the actuator.    
+Implementation of query openc2 is required.
+The query openc2 command is intended to enable the openc2 producer
+to determine the capabilities of the actuator.
+The query openc2 command can also be used to check the status of the actuator.
 
 ```
 # This thread illustrates the use of query openc2 to verify that the actuator
 # is functioning and/or determine the version of the language specification.
 # Note that the specifier is identified in the command but the value is not
-# populated.  
+# populated.
 {
     "Id"=12345
     "action": "query"
@@ -835,7 +840,7 @@ Response_type=complete}
     Results{
             	Type: openc2{
             	"Version": 1.0
-            	"profiles": stateless-packet-filtering,[ http://some.url.org](http://some.url.org)
+            	"profiles": haha,[ http://some.url.org](http://some.url.org)
 }
 }
 #  Case two, error
@@ -924,7 +929,7 @@ XML
     "Status":400
     Results{}
 
-Implementation of query ap-slpf-query command is optional.  The query ap-slpf-query is intended to enable the openc2 producer to determine the current state of the actuator.  
+Implementation of query ap-slpf-query command is optional.  The query ap-slpf-query is intended to enable the openc2 producer to determine the current state of the actuator.
 
 # Verify that the s are blocking all outbound ftp traffic and TELNET traffic
 {
@@ -973,4 +978,4 @@ Response_type=complete}
 ```
 
 # Appendix B. OpenC2 SCHEMA –  FUNCTIONS
-> **Editor's Note** - This section is a placeholder.
+> **Editor's Note** - TBSL

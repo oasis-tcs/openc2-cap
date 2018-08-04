@@ -40,6 +40,13 @@
 
 <div>
 
+### Further Description of this Repository
+This repository was created by the OpenC2 Technical Committee for
+open sourcing Custom Actuator Profiles (CAP's).
+More on CAP's may be found at
+[https://github.com/oasis-tcs/openc2-cap](https://github.com/oasis-tcs/openc2-cap)
+and the list of available caps is at (list)[./what.md]
+
 <h3>Contact</h3>
 <p>Please send questions or comments about <a href="https://www.oasis-open.org/resources/tcadmin/github-repositories-for-oasis-tc-members-chartered-work">OASIS TC GitHub repositories</a> to <a href="mailto:robin@oasis-open.org">Robin Cover</a> and <a href="mailto:chet.ensign@oasis-open.org">Chet Ensign</a>.  For questions about content in this repository, please contact the TC Chair or Co-Chairs as listed on the the OpenC2 TC's <a href="https://www.oasis-open.org/committees/openc2/">home page</a>.</p>
 </div>

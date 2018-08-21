@@ -191,7 +191,7 @@ The purpose of this document is to:
 This haha profile:
 
 * Does not define or implement ACTIONS beyond those defined in Version 1.0 of the Language Specification.
-* Is conformant with version 1.0 of the OpenC2 Language Specification as it existed in CSD04 (ref).
+* Is conformant with version 1.0 of the OpenC2 Language Specification as it existed in CSD07 (ref).
 
 Cyber defense systems that are utilizing OpenC2 MAY require the following components to implement the SLPF  profile:
 

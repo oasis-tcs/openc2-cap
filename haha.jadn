@@ -24,17 +24,13 @@
   ],
 
   ["Target", "Choice", [], "OpenC2 Target datatypes", [
-    [16, "openc2", "OpenC2", [], "A set of items used with the query action to determine an actuator's capabilities"]
+    [16, "openc2", "OpenC2", [], "A set of items used with the query action to determine an actuator's capabilities"],
+    [99, "hello_world", "HelloWorld", [], "Returns Hello World when used with query action"]
     ]
   ],
 
-  ["HahaSpecifiers", "Map", [], "", [
-    [1, "whatever", "cloud something tbsl", ["[0"], "locater of the actuator"],
-    [2, "next", "String", ["[0"], "whatever"]]
-  ],
-
   ["OpenC2-Response", "Record", [], "", [
-    [1, "id", "Command-ID", [], "Id of the ommand that induced this response"],
+    [1, "id", "Command-ID", [], "Id of the command that induced this response"],
     [2, "status", "Status-Code", [], "An integer status code"],
     [3, "status_text", "String", ["[0"], "A free-form human-readable description of the response status"],
     [4, "*", "Results", [], "Data or extended status information that was requested from an OpenC2 command"]]
@@ -65,7 +61,9 @@
     [3, "schema", "Definition of the command syntax supported by this actuator"]]
   ],
 
-  ["Command-ID", "String", [], "Uniquely identifies a particular command - TBD syntax"]
+  ["Command-ID", "String", [], "Uniquely identifies a particular command - TBD syntax"],
+
+  ["Hello World", "String", [], "Hello world target"]
 
   ]
  ]

@@ -15,8 +15,6 @@
   ["OpenC2-Command", "Record", [], "The OpenC2 Command describes an action performed on a target. It can be directive or descriptive depending on the context.", [
     [1, "action", "Action", [], "The task or activity to be performed (i.e., the 'verb')"],
     [2, "target", "Target", [], "The object of the action. The action is performed on the target"],
-    [3, "actuator", "Actuator", ["[0"], "The subject of the action. The actuator executes the action on the target"],
-    [4, "args", "Args", ["[0"], "Additional information that applies to the command"],
     [5, "id", "Command-ID", ["[0"], "Identifier used to link responses to a command"]]
   ],
 
@@ -26,22 +24,13 @@
   ],
 
   ["Target", "Choice", [], "OpenC2 Target datatypes", [
-    [16, "openc2", "OpenC2", [], "A set of items used with the query action to determine an actuator's capabilities"],
-    [18, "software", "Software", [], "High-level properties associated with software, including software products"]
+    [16, "openc2", "OpenC2", [], "A set of items used with the query action to determine an actuator's capabilities"]
     ]
-  ],
-
-  ["Actuator", "Choice", [], "", [
-    [1025, "x-haha", "HahaSpecifiers", [], "Specifiers TBSL"]]
   ],
 
   ["HahaSpecifiers", "Map", [], "", [
     [1, "whatever", "cloud something tbsl", ["[0"], "locater of the actuator"],
     [2, "next", "String", ["[0"], "whatever"]]
-  ],
-
-  ["Args", "Map", [], "", [
-    [4, "response_requested", "Response-Type", ["[0"], "The type of response required for the action"]
   ],
 
   ["OpenC2-Response", "Record", [], "", [
@@ -74,12 +63,6 @@
     [1, "versions", "OpenC2 language versions supported by this actuator"],
     [2, "profiles", "List of profiles supported by this actuator"],
     [3, "schema", "Definition of the command syntax supported by this actuator"]]
-  ],
-
-  ["Response-Type", "Enumerated", [], "", [
-    [0, "none", "No response"],
-    [1, "ack", "Respond when command received"],
-    [2, "complete", "Respond when all aspects of command completed"]]
   ],
 
   ["Command-ID", "String", [], "Uniquely identifies a particular command - TBD syntax"]
